@@ -16,8 +16,8 @@ function setGame() {
         document.getElementById("pipe").appendChild(div);
     }
 
-    setInterval(setMole, 1000);
-    setInterval(setPlant, 1000);
+    setInterval(setMole, 2000);
+    setInterval(setPlant, 2000);
 }
 
 function getRandomTile() {
