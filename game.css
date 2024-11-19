@@ -1,0 +1,249 @@
+#Container{
+    background-color: rgb(3, 110, 3);
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-image: url(./image/soil.png);
+}
+body {
+    background-image: url('./image/mario-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr);    /* 3 rows */
+    gap: 10px;                             /* Space between items */
+    width: 100%;
+    height: 100vh;
+}
+#pipe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+    gap: 0px; /* No gap between tiles for seamless grid */
+    width: 540px; /* Total width of the board */
+    height: 540px; /* Total height of the board */
+    margin: auto; /* Center the grid on the page */
+    /* Optional: background for the board */
+}
+
+#pipe div {
+    width: 140px; 
+    height: 140px;
+    display: flex; /* Enable flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-image: url("./image/pipe.png");
+    background-size: cover;
+    background-position: center;
+     /* Optional: border for grid cells */
+}
+
+#pipe div img{
+    /* all img tags inside tiles */
+    width: 100px;
+    height: 100px;
+        margin-bottom: 80px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+body {
+    background-image: url('./image/mario-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+    width: 100%;
+    margin: 0;
+    display: flex; /* Enable flexbox for body */
+    flex-direction: column; /* Keep elements vertically aligned */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+#score {
+   
+    margin: 0;
+    padding: 10px 20px; /* Optional: Add padding */
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background */
+    font-size: 24px;
+    text-align: center;
+}
+
+#MaxTr {
+    margin: 0;
+    
+    padding: 10px 20px; /* Optional: Add padding */
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background */
+    font-size: 24px;
+    text-align: center;
+}
+
+
+#Restart {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position it relative to the game area */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to truly center */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 18px; /* Slightly larger font */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+#Restart:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: translate(-50%, -50%) scale(1.05); /* Scale slightly on hover */
+}
+
+#Restart:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    transform: translate(-50%, -50%) scale(1.02); /* Subtle scale on click */
+}
+@media screen and (max-width: 480px) {
+    #Container {
+        height: 500px;
+        width: 380px;
+    }
+   
+    #pipe {
+        grid-template-columns: repeat(3, 1fr);  /* Single-column layout */
+        width: 380px;
+         /* Full width */
+        height: 480px;
+    }
+
+    #pipe div {
+        width: 100%; /* Full width */
+        height: 140px; /* Smaller tiles */
+        background-size: contain;
+    }
+
+    #pipe div img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 40px;
+    }
+   
+    #score, #MaxTr {
+       
+        font-size: 30px;
+        padding: 5px 10px;
+        margin: 0;
+    }
+    #MaxTr{
+        margin-top: 50px;
+       }
+
+    #Restart {
+        display: none; /* Initially hidden */
+        position: absolute; /* Position it relative to the game area */
+        top: 35%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust to truly center */
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        border: none; /* No border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px 20px; /* Add some padding */
+        font-size: 30px; /* Slightly larger font */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+
+    }
+    #Restart:hover {
+        background-color: #45a049; /* Slightly darker green on hover */
+        transform: translate(-50%, -50%) scale(1.05); /* Scale slightly on hover */
+    }
+    
+    #Restart:active {
+        background-color: #3e8e41; /* Even darker green when clicked */
+        transform: translate(-50%, -50%) scale(1.02); /* Subtle scale on click */
+    }
+    #YouWin {
+        display: none;
+        font-size: 48px;
+        font-weight: bold;
+        color: #FFD700;
+        text-align: center;
+        animation: winAnimation 2s ease-in-out infinite;
+        z-index: 1;
+        position: absolute;
+        top: 45%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+   
+}
+#YouWin {
+    display: none; /* Hidden by default */
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFD700; /* Gold color for a "winning" vibe */
+    text-align: center;
+    animation: winAnimation 2s ease-in-out infinite; /* Apply animation */
+    z-index: 1; /* Ensure it's properly layered */
+    position: absolute; /* Position it absolutely */
+    top: 55%; /* Center vertically */
+   left: 43% ;/* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for true center */
+    margin: 0; /* Remove margin to prevent unintended offset */
+}
+
+
+/* Keyframes for the animation */
+@keyframes winAnimation {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px #FF4500;
+    }
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px #FFD700, 0 0 30px #FFA500, 0 0 40px #FF4500;
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px #FF4500;
+    }
+}
+
+/* Show the message when triggered */
+#YouWin.show {
+    display: block; /* Make it visible */
+}
+@media screen and (max-width: 480px) {
+    #YouWin {
+        display: none; /* Hidden by default */
+        font-size: 48px;
+        font-weight: bold;
+        color: #FFD700; /* Gold color for a "winning" vibe */
+        text-align: center;
+        animation: winAnimation 2s ease-in-out infinite; /* Apply animation */
+        z-index: 1; /* Ensure it's properly layered */
+        position: absolute; /* Position it absolutely */
+        top: 45%; /* Center vertically */
+       left: 23% ;/* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for true center */
+        margin: 0; /* Remove margin to prevent unintended offset */
+    }
+
+}
